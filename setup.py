@@ -8,9 +8,11 @@ import io
 
 # 将markdown格式转换为rst格式
 def md_to_rst(from_file, to_file):
-    r = requests.post(url='http://c.docverter.com/convert',
-                      data={'to': 'rst', 'from': 'markdown'},
-                      files={'input_files[]': open(from_file, 'rb')})
+    r = requests.post(
+        url='http://c.docverter.com/convert',
+        data={'to': 'rst', 'from': 'markdown'},
+        files={'input_files[]': open(from_file, 'rb')}
+    )
     if r.ok:
         with open(to_file, "wb") as f:
             f.write(r.content)
@@ -30,7 +32,7 @@ else:
 
 setuptools.setup(
     name="python-bean",
-    version="0.0.1",
+    version="0.0.2",
     author="Peng Shiyu",
     author_email="pengshiyuyx@gmail.com",
     description="some util collection for python",

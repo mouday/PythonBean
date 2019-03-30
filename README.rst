@@ -3,6 +3,14 @@ PythonBean
 
 整合封装一些工作中常用到的工具
 
+安装
+
+::
+
+    pip install python-bean
+
+pypi: https://pypi.org/project/python-bean/
+
 目前工作中主要是用 Python2.7.5
 
 所以工具主要支持此版本
