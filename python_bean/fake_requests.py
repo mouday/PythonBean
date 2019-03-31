@@ -5,6 +5,9 @@
 
 
 """
+Python编程：FakeRequests一个对 requests 的包装类
+https://blog.csdn.net/mouday/article/details/88915022
+
 一个对 requests 的包装类，用法和requests 一模一样
 """
 from __future__ import unicode_literals, print_function
