@@ -1,9 +1,27 @@
 # -*- encoding: utf-8 -*-
 
-import setuptools
-import os
-import requests
+"""
+打包
+python setup.py sdist bdist_wheel
+
+上传pypi
+twine upload dist/*
+"""
+
 import io
+import os
+from os import path
+
+import requests
+import setuptools
+
+version = "0.0.3"
+
+basedir = path.dirname(path.abspath(__file__))
+
+readme_md = path.join(basedir, "README.md")
+readme_rst = path.join(basedir, "README.rst")
+requirements = path.join(basedir, "requirements.txt")
 
 
 # 将markdown格式转换为rst格式
@@ -18,21 +36,22 @@ def md_to_rst(from_file, to_file):
             f.write(r.content)
 
 
-if os.path.exists("README.md"):
-    md_to_rst("README.md", "README.rst")
+if os.path.exists(readme_md):
+    md_to_rst(readme_md, readme_rst)
 
-long_description = 'Add a fallback short description here'
-if os.path.exists('README.rst'):
-    long_description = io.open('README.rst', encoding="utf-8").read()
+if os.path.exists(readme_rst):
+    long_description = io.open(readme_rst, encoding="utf-8").read()
+else:
+    long_description = 'Add a fallback short description here'
 
-if os.path.exists("requirements.txt"):
-    install_requires = io.open("requirements.txt").read().split("\n")
+if os.path.exists(requirements):
+    install_requires = io.open(requirements).read().split("\n")
 else:
     install_requires = []
 
 setuptools.setup(
     name="python-bean",
-    version="0.0.2",
+    version=version,
     author="Peng Shiyu",
     author_email="pengshiyuyx@gmail.com",
     description="some util collection for python",
@@ -41,7 +60,8 @@ setuptools.setup(
     url="https://github.com/mouday/PythonBean",
     packages=setuptools.find_packages(),
     classifiers=(
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),

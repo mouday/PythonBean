@@ -13,8 +13,9 @@ pypi: https://pypi.org/project/python-bean/
 
 所以工具主要支持此版本
 
-|名称|说明|
-|-|-|
-| DocumentSimilar| 利用gensim tf-idf比对文档相似度 |
-| DataBase| 使用上下文管理器管理MySQL的链接对象 |
+|名称|说明|更新日期
+|-|-|-|
+| DocumentSimilar| 利用gensim tf-idf比对文档相似度 | 2019-03-30 |
+| DataBase| 使用上下文管理器管理MySQL的链接对象 | 2019-03-30 |
+| FakeRequests | 对requests的简易包装，相同的用法 | 2019-03-31 |
 
