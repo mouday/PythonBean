@@ -18,4 +18,5 @@ pypi: https://pypi.org/project/python-bean/
 | DocumentSimilar| 利用gensim tf-idf比对文档相似度 | 2019-03-30 |
 | DataBase| 使用上下文管理器管理MySQL的链接对象 | 2019-03-30 |
 | FakeRequests | 对requests的简易包装，相同的用法 | 2019-03-31 |
-
+| SSHClient | 对paramiko 的简易封装 | 2019-04-03 |
+| SendEmail| 对smtplib 的简易封装 | 2019-04-03 |
